@@ -1,0 +1,25 @@
+{
+  "name": "smarttrade",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MingLu0/SmartTrade.git"
+  },
+  "author": "Ming Luo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MingLu0/SmartTrade/issues"
+  },
+  "homepage": "https://github.com/MingLu0/SmartTrade#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
