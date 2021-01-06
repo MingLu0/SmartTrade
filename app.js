@@ -17,7 +17,12 @@ app.use(adminRoutes.routes);
 app.use(shopRoutes);
 
 app.use((req, res, next) => {
-    res.status(400).sendFile(path.join(__dirname, 'views', '404.html'))
+    res.render('404', {
+        pageTitle: '404',
+        path: '/',
+        activeShop: true,
+        productCSS: true
+      });
 })
 
 const server = http.createServer(app);
