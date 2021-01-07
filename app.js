@@ -1,32 +1,23 @@
-const http = require('http');
-const express = require('express');
+const http = require("http");
+const express = require("express");
 const app = express();
-const path = require('path');
+const path = require("path");
 
-app.set('view engine', 'ejs');
-app.set('views', 'views');
+app.set("view engine", "ejs");
+app.set("views", "views");
 
-const adminRoutes = require('./routes/admin');
-const shopRoutes = require('./routes/shop');
+const adminRoutes = require("./routes/admin");
+const shopRoutes = require("./routes/shop");
+const bodyParser = require("body-parser");
+const errorController = require('./controllers/error');
 
-const bodyParser = require('body-parser');
-
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(adminRoutes.routes);
+app.use(adminRoutes);
 app.use(shopRoutes);
 
-app.use((req, res, next) => {
-    res.render('404', {
-        pageTitle: '404',
-        path: '/',
-        activeShop: true,
-        productCSS: true
-      });
-})
+app.use(errorController.get404);
 
 const server = http.createServer(app);
 
 server.listen(3000);
-
-
