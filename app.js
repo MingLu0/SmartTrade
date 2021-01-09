@@ -9,7 +9,7 @@ app.set("views", "views");
 const adminRoutes = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
 const bodyParser = require("body-parser");
-const errorController = require('./controllers/error');
+const errorController = require("./controllers/error");
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.urlencoded({ extended: false }));
